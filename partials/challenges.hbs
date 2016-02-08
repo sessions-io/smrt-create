@@ -1,0 +1,14 @@
+<html>
+  <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <h2>My Challenges</h2>
+    <br>
+    {{#each challenges}}
+    <a href="{{hostname}}/me/challenges/{{id}}">{{name}}</a><br>
+    {{/each}}
+    <br><br>
+    <a href="/">Back</a>
+  </body>
+</html>

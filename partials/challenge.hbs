@@ -1,0 +1,45 @@
+<html>
+  <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <script
+        type="text/javascript"
+        async defer
+        src="//assets.pinterest.com/js/pinit.js"
+    ></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=1421896648076526";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    <h2> {{ challenge.name }} </h2>
+    {{ challenge.summary }} <br><br>
+    Number of sessions: {{ challenge.segments.[0].count }}<br>
+    Number of days to complete: {{ challenge.segments.[0].days }}<br>
+    Sessions can be of type: <b> {{#each challenge.challenge.[0].filter.type}} {{ this }} {{/each}} </b><br>
+    Each session must be at least {{ challenge.segments.[0].filter.minutes }} minute{{#if plural}}s{{/if}}<br><br>
+    <br><br>
+    <h2>Share This Challenge</h2>
+    Share link: <input type="text" readonly value="https://{{hostname}}/s/{{challenge.share}}" size="40"><br><br>
+    <div class="fb-share-button" data-href="https://{{hostname}}/s/{{challenge.share}}" data-layout="button"></div><br><br>
+    <a href="https://twitter.com/share" class="twitter-share-button"{count} data-url="https://{{hostname}}/s/{{challenge.share}}" data-text="Try my wearable fitness challenge!" data-via="GetSessions" data-size="large" data-hashtags="sessions">Tweet</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+    </script><br><br>
+    <a data-pin-do="buttonPin" href="https://www.pinterest.com/pin/create/button/?url=https://{{hostname}}/s/{{challenge.share}}&description={{ challenge.name }} - {{ challenge.summary }}"></a>
+    <br><br>
+    <g:plus action="share" href="https://{{hostname}}/s/{{challenge.share}}"></g:plus><br>
+    <a href="mailto:?subject={{challenge.name}}&body=Tap this link from my iPhone:%0D%0A%0D%0Ahttps://{{ hostname }}/s/{{ challenge.share }}"><br>
+    Email link
+    </a><br><br>
+    <br>
+    <h2>Other Actions</h2>
+    <a href="https://{{hostname}}/s/{{challenge.share}}">View Challenge (As User)</a><br><br>
+    <a href="https://{{hostname}}/me/challenges/{{id}}/delete">Delete Challenge</a><br><br>
+    <a href="https://{{hostname}}/me/challenges">View all my challenges</a>
+  </body>
+</html>

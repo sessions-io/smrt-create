@@ -1,0 +1,22 @@
+<html>
+  <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <h2>Create Challenge</h2>
+    <form method="POST" action="/me/challenges">
+    How many sessions must be completed? <input type="number" name="num_sessions" min="1" value="10" style="width:50px;"><br><br>
+    In how many days? <input type="number" name="num_days" min="1" value="14" style="width:50px;"><br><br>
+    Which session types should count?<br><br>
+    <input type="checkbox" name="walk" checked value="true"> Walk <input type="checkbox" checked name="run" value="true"> Run <input type="checkbox" checked name="cycle" value="true"> Cycle<br><br>
+    Each session must be at least <input type="number" name="min_minutes" min="1" value="1" style="width:50px;">  minutes in duration<br><br>
+    Name: <input type="text" name="name" value="My first challenge"><br><br>
+    Summary:<br>
+    <textarea name="description" rows="5" cols="50">Describe this challenge in words</textarea><br><br><br>
+    <button type="submit">Create</button>
+    </form>
+    <form method="POST" action="/cancel">
+    <button type="submit">Cancel</button>
+    </form>
+  </body>
+</html>

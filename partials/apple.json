@@ -1,0 +1,11 @@
+{ 
+  "applinks": {
+        "apps": [ ],
+        "details": [
+            {
+                "appID": "96SJK7YQJ2.com.substrait.ChallengeView",
+                "paths": [ "/s/*" ]
+            }
+        ]
+    }
+}
